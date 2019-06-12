@@ -1,4 +1,4 @@
- 
+#!/bin/bash
 TOKEN=######
 CHATID=########
 URL="https://api.telegram.org/bot$TOKEN/sendMessage"
