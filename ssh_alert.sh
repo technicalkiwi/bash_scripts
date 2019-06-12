@@ -1,10 +1,12 @@
 #!/bin/bash
-TOKEN=######
-CHATID=########
+TOKEN="##############"
+CHATID="#########"
 URL="https://api.telegram.org/bot$TOKEN/sendMessage"
-Text="
+SERVER="###########"
+TIME="10"
+TEXT="
 A SSH login was successful, so here are some information for security:
-  User:        $PAM_USER
+  	User:        $PAM_USER
 	Date:        `date`
 	Server:      `uname -a`
 "
