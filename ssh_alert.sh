@@ -8,7 +8,7 @@ TEXT="
 A SSH login was successful, so here are some information for security:
   	User:        $PAM_USER
 	Date:        `date`
-	Server:      `uname -a`
+	Server:      $SERVER
 "
 if [ ${PAM_TYPE} = "open_session" ]; then
 	
