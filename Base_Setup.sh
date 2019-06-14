@@ -1,22 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@technicalkiwi 
-0
-0 0 temightyspoon/Bash-Scripts
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Security  Insights
-Bash-Scripts/Base_Setup.sh
-@temightyspoon temightyspoon update sed command
-d2d760b 29 minutes ago
-@temightyspoon @aarpk
-Executable File  65 lines (51 sloc)  1.99 KB
-    
 #!/bin/bash
 #script to install all the little thing on a new system
 
@@ -81,15 +62,3 @@ SSHD_Path="/etc/ssh/sshd_config"
   sed -i "s|^\\(DB_USERNAME=\\).*|\\1$DB_USER|" "$SSHD_Path"
   sed -i "s|^\\(DB_PASSWORD=\\).*|\\1$DB_PASS|" "$SSHD_Path"
   sed -i "s|^\\(APP_URL=\\).*|\\1http://$WEB_ADDR|" "$SSHD_Path"
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
