@@ -34,16 +34,17 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-# Install Packages
-PACKAGES="neofetch ssh htop chromium-browser vlc git net-tools curl wget unzip filezilla"
+# Install Package
+#Add in Repos
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg;
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list';
+
+#Start package installation
+PACKAGES="neofetch ssh htop chromium-browser vlc software-properties-common git net-tools curl wget unzip filezilla ansible code"
 install_packages
 
-
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
-  sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg;
-	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list';
-	sudo apt-get update;
-	sudo apt-get install code;
 
 # Configure git
 git config --global user.name $gitusername
