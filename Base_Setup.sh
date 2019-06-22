@@ -51,8 +51,10 @@ git config --global user.name $gitusername
 git config --global user.email $gitemail_addr
 git config --sysyem core.editor nano
 
-# Pull down Auth Keys
+# Pull down Auth Keys and add them in
 curl https://raw.githubusercontent.com/temightyspoon/liunx-bits/master/auth_keys > /tmp/auth_tmp
+mkdir -p ~/.ssh && cp /tmp/auth_tmp ~/.ssh/authorized_keys
+
 
 # Configure sshd_config
 SSHD_Path="/etc/ssh/sshd_config"
