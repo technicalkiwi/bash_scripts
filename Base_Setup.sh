@@ -52,7 +52,7 @@ git config --global user.email $gitemail_addr
 git config --sysyem core.editor nano
 
 # Pull down Auth Keys and add them in
-curl https://raw.githubusercontent.com/temightyspoon/liunx-bits/master/auth_keys > /tmp/auth_tmp
+curl https://raw.githubusercontent.com/technicalkiwi/Liunx_bits/master/auth_keys > /tmp/auth_tmp
 mkdir -p ~/.ssh && cp /tmp/auth_tmp ~/.ssh/authorized_keys
 
 
