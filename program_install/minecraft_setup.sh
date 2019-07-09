@@ -10,13 +10,23 @@ log () {
   fi
 }
 
-#function to create start.sh
+#function to create server_start.sh
 create_start.sh(){
 { echo "#!/bin/bash"
   echo ""
-  echo "java -Xms1024M -Xmx1024M -jar server.jar &"
-} >> start.sh
+  echo "java -Xms1024M -Xmx1024M -jar server.jar nogui"
+} >> server_start.sh
 }
+
+#function to create server_run.sh
+create_run.sh(){
+{ echo "#!/bin/bash"
+  echo ""
+  echo "screen -dmS Minecraft /home/minecraft/server/server_start.sh bash
+  } >> server_run.sh
+}
+
+#
 
 #update and upgrade apt
 sudo apt update && sudo apt upgrade -y
@@ -32,8 +42,12 @@ wget https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72d
 
 #create startup script
 create_start.sh
-sudo chmod +x start.sh
-log ./start.sh
+sudo chmod +x server_start.sh
+log ./server_start.sh
 
 #alter eula to be true
 sed -i "s|^\\(eula=\\).*|\\1"true"|" "eula.txt"
+
+#create Run script
+create_run.sh
+sudo chmod +x server_run.sh
