@@ -24,7 +24,7 @@ sudo apt install wget unzip openjdk-8-jre-headless screen -y
 
 #create user to run server
 sudo useradd -G sudo  minecraft 
-sudo mkdir --parents /home/minecraft/server
+sudo mkdir -p /home/minecraft/server
 
 #download server jar file
 cd /home/minecraft/server 
