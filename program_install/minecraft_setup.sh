@@ -1,6 +1,8 @@
 #!/bin/bash
 #Script to install Minecraft server
 
+JARFILE = "https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar"
+
 # create logging function
 log () {
   if [ -n "$verbose" ]; then
@@ -38,7 +40,7 @@ sudo mkdir -p /home/minecraft/server
 
 # download server jar file
 cd /home/minecraft/server 
-wget https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar
+wget $JARFILE
 
 # create startup script
 create_start.sh
