@@ -20,7 +20,7 @@ create_start.sh(){
 
 #update and upgrade apt
 sudo apt update && sudo apt upgrade -y
-sudo apt install wget unzip openjdk-8-jre-headless screen
+sudo apt install wget unzip openjdk-8-jre-headless screen -y
 
 #create user to run server
 sudo useradd -G sudo  minecraft 
