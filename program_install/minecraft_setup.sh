@@ -12,9 +12,9 @@ log () {
 
 #function to create start.sh
 create_start.sh(){
- {echo "#!/bin/bash"
- echo ""
- echo "java -Xms1024M -Xmx1024M -jar server.jar &"
+{ echo "#!/bin/bash"
+  echo ""
+  echo "java -Xms1024M -Xmx1024M -jar server.jar &"
 } >> start.sh
 }
 
