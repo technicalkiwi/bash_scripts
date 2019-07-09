@@ -14,7 +14,7 @@ log () {
 create_start.sh(){
  {echo "#!/bin/bash"
  echo ""
- echo "java -Xms1024M -Xmx1024M -jar server.jar "
+ echo "java -Xms1024M -Xmx1024M -jar server.jar &"
 } >> start.sh
 }
 
