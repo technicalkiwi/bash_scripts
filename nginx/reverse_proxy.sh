@@ -27,9 +27,10 @@ echo }
 # Sets the variables
 read -p "Please enter URI: " URI
 read -p " Please enter Server IP: " IP
-read -p " Please enter server Port: " Port
+read -p " Please enter server Port: " PORT
 
 cd /etc/nginx/sites-enabled/
 
 create_serverblock
+
 
