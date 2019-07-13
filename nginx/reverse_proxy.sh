@@ -33,4 +33,4 @@ cd /etc/nginx/sites-enabled/
 
 create_serverblock
 
-
+certbot certonly --nginx -d $URI -d www.$URI
