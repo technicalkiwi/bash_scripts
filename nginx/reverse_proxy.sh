@@ -28,7 +28,7 @@ create_sslserverblock() {
         echo        listen 443 ssl\;
         echo        listen [::]:443\;
 
-        echo        server_name $URI www.$URI
+        echo        server_name $URI www.$URI\;
         echo        
         echo         #SSL
         echo        ssl_certificate /etc/letsencrypt/live/$URI/fullchain.pem\;
@@ -68,9 +68,13 @@ read -p " Please enter server Port: " PORT
 
 cd /etc/nginx/sites-enabled/
 
+rm $URI.conf
+
 create_serverblock
 
 certbot certonly --nginx -d $URI -d www.$URI
+
+rm $URI.conf
 
 create_sslserverblock
 
