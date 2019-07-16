@@ -78,3 +78,6 @@ rm $URI.conf
 
 create_sslserverblock
 
+sudo nginx -t
+
+read -p "would you like to reload nginx now?: " RELOAD
