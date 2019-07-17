@@ -80,4 +80,11 @@ create_sslserverblock
 
 sudo nginx -t
 
-read -p "would you like to reload nginx now?: " RELOAD
+while true; do
+    read -p "would you like to reload nginx now?: " yn
+    case $yn in
+        [Yy]* ) systemctl restart nginx; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
