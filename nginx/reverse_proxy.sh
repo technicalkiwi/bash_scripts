@@ -30,23 +30,29 @@ create_sslserverblock() {
 
         echo        server_name $URI www.$URI\;
         echo        
-        echo         #SSL
+        echo        \# SSL
         echo        ssl_certificate /etc/letsencrypt/live/$URI/fullchain.pem\;
         echo        ssl_certificate_key /etc/letsencrypt/live/$URI/privkey.pem\;
         echo        ssl_trusted_certificate /etc/letsencrypt/live/$URI/chain.pem\;
         echo
         echo
-        echo        # Logging
+        echo        \# Logging
         echo        access_log /var/log/nginx/$URI.access.log\;
+        echo
+        echo        \# Iframe
+        echo        include conf_files/iframe.conf\;
+        echo        
+        echo        \# Security Settings
+        echo        include conf_files/security.conf\;
 
-        echo        #Reverse Proxy
+        echo        \# Reverse Proxy
         echo        location / {
         echo        proxy_pass http://$IP:$PORT\;
         echo        include conf_files/proxy.conf\;
         echo }
 echo }
         echo
-        echo        #HTTP Redirect
+        echo        \# HTTP Redirect
         echo    server {
         echo            listen 80\;
         echo            listen [::]:80\;
