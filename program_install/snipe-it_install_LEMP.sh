@@ -65,7 +65,7 @@ create_virtualhost () {
 #updates and upgrades installed apps
 log "apt update && apt upgrade -y" 
 
-PACKAGES="mariadb-server mariadb-client apache2 libapache2-mod-php php php-mcrypt php-curl php-mysql php-gd php-ldap php-zip php-mbstring php-xml php-bcmath curl git unzip"
+PACKAGES="mariadb-server mariadb-client nginx php php-mcrypt php-curl php-mysql php-gd php-ldap php-zip php-mbstring php-xml php-bcmath curl git unzip"
 install_packages
 
 #enable webserver on startup
@@ -129,9 +129,9 @@ read -p "Please enter the URL for site [localhost]: " WEB_ADDR
   sed -i "s|^\\(DB_PASSWORD=\\).*|\\1$DB_PASS|" "$APP_PATH/.env"
   sed -i "s|^\\(APP_URL=\\).*|\\1http://$WEB_ADDR|" "$APP_PATH/.env"
 
-#Create apache server block
-apachefile=/etc/apache2/sites-available/$APP_NAME.conf
-create_virtualhost
+#Create nginx server block
+nginxfile=/etc/nginx/sites-available/$WEB_ADDR.conf
+create_serverblock
 
 echo "* Running composer."
 /usr/local/bin/composer install --no-dev --prefer-source --working-dir "$APP_PATH"
@@ -143,8 +143,7 @@ echo "* Artisan Migrate."
   log "php $APP_PATH/artisan migrate --force"
 
 phpenmod mbstring
-a2enmod rewrite
-a2ensite $APP_NAME.conf
+$APP_NAME.conf
 
 echo "* Restarting Apache httpd."
 log "systemctl restart apache2"
