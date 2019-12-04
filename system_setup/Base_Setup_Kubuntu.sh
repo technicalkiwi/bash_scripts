@@ -43,7 +43,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 
 #Start package installation
 apt update
-PACKAGES="neofetch ssh htop chromium-browser vlc software-properties-common git net-tools curl wget unzip filezilla ansible code g++ libx11-dev libxext-dev qtbase5-dev libqt5svg5-dev libqt5x11extras5-dev libkf5windowsystem-dev qttools5-dev-tools cmake checkinstall"
+PACKAGES="neofetch ssh htop chromium-browser vlc software-properties-common flameshot git net-tools curl wget unzip filezilla ansible code g++ libx11-dev libxext-dev qtbase5-dev libqt5svg5-dev libqt5x11extras5-dev libkf5windowsystem-dev qttools5-dev-tools cmake checkinstall"
 install_packages
 
 # Install Kvantum 

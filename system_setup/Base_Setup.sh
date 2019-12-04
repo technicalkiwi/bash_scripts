@@ -42,7 +42,7 @@ sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg;
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list';
 
 #Start package installation
-PACKAGES="neofetch ssh htop chromium-browser vlc software-properties-common git net-tools curl wget unzip filezilla ansible code"
+PACKAGES="neofetch ssh htop chromium-browser vlc flameshot software-properties-common git net-tools curl wget unzip filezilla ansible code"
 install_packages
 
 
