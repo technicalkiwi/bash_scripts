@@ -29,7 +29,7 @@ log () {
 }
 
 
- PACKAGES="mariadb-server mariadb-client apache2 libapache2-mod-php php php-mcrypt php-curl php-mysql php-gd $
+ PACKAGES="mariadb-server mariadb-client apache2 libapache2-mod-php php php-mcrypt php-curl php-mysql php-gd"
 
 install_packages () {
         for p in $PACKAGES; do
