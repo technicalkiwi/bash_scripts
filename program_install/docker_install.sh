@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#Setup Log Command
+log () {
+  if [ -n "$verbose" ]; then
+    eval "$@" |& tee -a /var/log/docker_install.log
+  else
+    eval "$@" |& tee -a /var/log/docker_install.log >/dev/null 2>&1
+  fi
+}
 
 #Setup Install Packages Command
 install_packages () {
