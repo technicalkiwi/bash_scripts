@@ -26,9 +26,9 @@ done;
 
 
 # Set Variables for script
-read -p "please enter username for git" $gitusername
-read -p "please enter email for git" $gitemail_addr
-read -p " What port do you want to use for ssh?" $SshPort
+read -p "Please Enter Username for git:  " $gitusername
+read -p "Please EnterDemail for git:  " $gitemail_addr
+read -p "Plesae Enter Port to use for ssh:  " $SshPort
 
 sudo apt update -y
 sudo apt upgrade -y
